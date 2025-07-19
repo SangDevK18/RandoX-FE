@@ -19,7 +19,7 @@ import './ActiveSessionsPage.css'
 const { Title, Text } = Typography
 
 const ActiveSessionsPage: React.FC = () => {
-  const { data: sessions = [], isLoading } = useGetActiveSessionsQuery()
+  const { data: sessions = [], isLoading } = useGetActiveSessionsQuery({})
   const navigate = useNavigate()
 
   return (

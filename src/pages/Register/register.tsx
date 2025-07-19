@@ -1,5 +1,4 @@
 import { Layout, Typography, Row } from 'antd'
-import { LoginForm } from '../../components/Authentication/LoginForm'
 import Logo from '../../assets/Logo.png'
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'

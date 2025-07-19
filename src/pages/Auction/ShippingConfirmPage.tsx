@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useParams } from 'react-router-dom'
 import { Button, Form, Input, notification, Typography } from 'antd'
 import { useConfirmShippingMutation } from '../../features/auction/auctionAPI'

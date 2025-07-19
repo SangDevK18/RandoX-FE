@@ -22,12 +22,7 @@ import type { ColumnsType } from 'antd/es/table'
 
 const { Option } = Select
 
-const ROLE_MAP: { [key: string]: string } = {
-  'C6AF9EEA-C011-4B98-9963-009A859D060B': 'Admin',
-  '532FCF02-916F-4F2D-A095-60ED4DA8924E': 'Manager',
-  'A1FDB0C2-0DAF-4BB0-B075-A3CC0B2FEBEB': 'Customer',
-  '59E7061E-5B9C-4DFA-93D2-BAEA9717F37A': 'Staff',
-}
+
 const ROLE_OPTIONS = [
   { label: 'Admin', value: 'c6af9eea-c011-4b98-9963-009a859d060b' },
   { label: 'Manager', value: '532fcf02-916f-4f2d-a095-60ed4da8924e' },
@@ -35,12 +30,7 @@ const ROLE_OPTIONS = [
   { label: 'Staff', value: '59e7061e-5b9c-4dfa-93d2-baea9717f37a' },
 ]
 
-const ROLE_COLOR: { [key: string]: string } = {
-  Admin: 'purple',
-  Manager: 'blue',
-  Customer: 'green',
-  Staff: 'orange',
-}
+
 
 const AdminAccountManager: React.FC = () => {
   const { data: accounts = [], refetch } = useGetAllAccountsQuery()
