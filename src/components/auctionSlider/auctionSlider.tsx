@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import './auctionSlider.css'
 import { Card, Carousel, Tag } from 'antd'

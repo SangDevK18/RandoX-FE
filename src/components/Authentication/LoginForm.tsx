@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Form, Input, Button, notification } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import Cookies from 'js-cookie'

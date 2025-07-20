@@ -1,4 +1,4 @@
-// src/components/Manager/ProductManager.tsx
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react'
 import {
   Table,
@@ -154,7 +154,6 @@ const ProductManager: React.FC = () => {
       <Tabs
         defaultActiveKey='product'
         onChange={(key) => setActiveTab(key as 'product' | 'productSet')}
-
       >
         <TabPane tab='Product' key='product'>
           <Button

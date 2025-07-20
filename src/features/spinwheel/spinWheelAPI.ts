@@ -1,4 +1,4 @@
-// src/features/spinwheel/spinWheelAPI.ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { apiSlice } from '../../apis/apiSlice'
 
 export const spinWheelAPI = apiSlice.injectEndpoints({

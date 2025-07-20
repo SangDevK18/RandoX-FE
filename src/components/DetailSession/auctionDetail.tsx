@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import {
@@ -83,13 +84,13 @@ const DetailSession: React.FC = () => {
           description: error?.message || 'Đã xảy ra lỗi khi kết nối.',
         })
       },
-      () => { } // Add an empty callback or appropriate handler as the fourth argument
+      () => {} // Add an empty callback or appropriate handler as the fourth argument
     )
 
     return () => {
       disconnectFromAuctionHub(sessionId)
     }
-  }, [sessionId])
+  }, [sessionId, api])
 
   const openNotification = (type: 'success' | 'error', message: string) => {
     api[type]({
@@ -136,7 +137,10 @@ const DetailSession: React.FC = () => {
   const stepPrice = data?.session?.auctionItem?.stepPrice || null
 
   // Handle pagination
-  const paginatedBids = bids.slice((currentPage - 1) * pageSize, currentPage * pageSize)
+  const paginatedBids = bids.slice(
+    (currentPage - 1) * pageSize,
+    currentPage * pageSize
+  )
 
   return (
     <div className='auction-container'>
@@ -151,35 +155,34 @@ const DetailSession: React.FC = () => {
       <div className='auction-content'>
         <div className='auction-main'>
           <Card className='item-card'>
-            <div style={{ display: "flex" }}>
+            <div style={{ display: 'flex' }}>
               <div className='item-image-container'>
                 <img
                   src={item?.imageUrl || '/no-image.png'}
                   alt='Ảnh sản phẩm'
                   className='item-image'
                 />
-                <p><Text className='item-description'>{item?.description}</Text></p>
+                <p>
+                  <Text className='item-description'>{item?.description}</Text>
+                </p>
               </div>
               <div className='item-details'>
                 <div className='price-info'>
                   <div className='price-item'>
                     <DollarOutlined className='price-icon' />
                     <span>
-                      Giá khởi điểm:{' '}
-                      <>{item?.startPrice?.toLocaleString()}đ</>
+                      Giá khởi điểm: <>{item?.startPrice?.toLocaleString()}đ</>
                     </span>
                   </div>
                   <div className='price-item'>
                     <TrophyOutlined className='price-icon' />
                     <span>
-                      Giá chốt:{' '}
-                      <>{item?.reservePrice?.toLocaleString()}đ</>
+                      Giá chốt: <>{item?.reservePrice?.toLocaleString()}đ</>
                     </span>
                   </div>
                   <div className='price-item'>
                     <span>
-                      Bước nhảy:{' '}
-                      <>{item?.stepPrice?.toLocaleString()}đ</>
+                      Bước nhảy: <>{item?.stepPrice?.toLocaleString()}đ</>
                     </span>
                   </div>
                   <div className='countdown-section'>
@@ -211,7 +214,7 @@ const DetailSession: React.FC = () => {
               onFinish={onFinish}
               layout='vertical'
               className='bid-form'
-              form={form}  // Thêm form vào đây để sử dụng resetFields
+              form={form} // Thêm form vào đây để sử dụng resetFields
             >
               <Form.Item
                 label='Giá đặt (VND)'
@@ -221,8 +224,8 @@ const DetailSession: React.FC = () => {
                   {
                     type: 'number',
                     min: (highestBid ?? 0) + (stepPrice ?? 0),
-                    message: `Giá đặt phải lớn hơn hoặc bằng ${((highestBid ?? 0) + (stepPrice ?? 0)).toLocaleString()}đ`
-                  }
+                    message: `Giá đặt phải lớn hơn hoặc bằng ${((highestBid ?? 0) + (stepPrice ?? 0)).toLocaleString()}đ`,
+                  },
                 ]}
               >
                 <InputNumber

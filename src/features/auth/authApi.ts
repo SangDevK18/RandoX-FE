@@ -62,7 +62,6 @@ export const authAPI = apiSlice.injectEndpoints({
       invalidatesTags: ['account'],
     }),
 
-
     forgetPassowrd: builder.mutation({
       query: ({ email }) => ({
         url: `/authentication/forget-password?email=${email}`,

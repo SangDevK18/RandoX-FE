@@ -69,7 +69,9 @@ const AdminLayout: React.FC = () => {
           <div className='header-right'>
             <button className='notification-btn'>🔔</button>
             <button className='profile-btn'>👤</button>
-            <button className='logout-btn' onClick={handleLogout}>Logout</button>
+            <button className='logout-btn' onClick={handleLogout}>
+              Logout
+            </button>
           </div>
         </header>
 

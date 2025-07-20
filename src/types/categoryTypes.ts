@@ -1,5 +1,5 @@
 // src/types/categoryTypes.ts
-
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export interface Category {
   id: string
   categoryName: string

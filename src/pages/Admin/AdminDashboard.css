@@ -170,10 +170,12 @@
   background: rgba(52, 211, 153, 0.1);
   color: #34d399;
 }
+
 .role-badge.manager {
   background: rgba(251, 191, 36, 0.1);
   color: #fbbf24;
 }
+
 .role-badge.admin {
   background: rgba(239, 68, 68, 0.1);
   color: #ef4444;
@@ -185,10 +187,12 @@
   font-size: 13px;
   font-weight: 600;
 }
+
 .status-badge.active {
   background: #e8f5e9;
   color: #4caf50;
 }
+
 .status-badge.inactive {
   background: #f0f0f0;
   color: #9ca3af;
@@ -300,14 +304,17 @@
   .stats-grid {
     grid-template-columns: 1fr;
   }
+
   .table-header {
     flex-direction: column;
     align-items: stretch;
   }
+
   .table-actions {
     flex-direction: column;
     width: 100%;
   }
+
   .search-box input {
     width: 100%;
   }

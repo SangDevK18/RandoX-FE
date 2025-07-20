@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, Form, Input, InputNumber, notification } from 'antd'
 import React from 'react'
 import { useSubmitAuctionItemMutation } from '../../features/auction/auctionAPI'
@@ -41,9 +42,9 @@ const AuctionCreatePage: React.FC = () => {
           maxWidth: '80%',
           padding: '24px',
           margin: '0 auto',
-          marginTop: "20px",
+          marginTop: '20px',
           background: '#fff',
-          borderRadius: "20px"
+          borderRadius: '20px',
         }}
       >
         <Form
@@ -53,10 +54,18 @@ const AuctionCreatePage: React.FC = () => {
           style={{ maxWidth: 600, margin: '0 auto' }}
           className='container-form-auction'
         >
-          <Form.Item name='name' label='Tên vật phẩm' rules={[{ required: true }]}>
+          <Form.Item
+            name='name'
+            label='Tên vật phẩm'
+            rules={[{ required: true }]}
+          >
             <Input />
           </Form.Item>
-          <Form.Item name='description' label='Mô tả' rules={[{ required: true }]}>
+          <Form.Item
+            name='description'
+            label='Mô tả'
+            rules={[{ required: true }]}
+          >
             <Input.TextArea />
           </Form.Item>
           <Form.Item
@@ -83,23 +92,23 @@ const AuctionCreatePage: React.FC = () => {
             <InputNumber min={0} style={{ width: '100%' }} />
           </Form.Item>
           <Form.Item
-            name="reservePrice"
-            label="Giá chốt"
+            name='reservePrice'
+            label='Giá chốt'
             dependencies={['startPrice']}
             rules={[
               { required: true, message: 'Vui lòng nhập giá chốt' },
               ({ getFieldValue }) => ({
                 validator(_, value) {
-                  const startPrice = getFieldValue('startPrice');
+                  const startPrice = getFieldValue('startPrice')
                   if (value === undefined || startPrice === undefined) {
-                    return Promise.resolve();
+                    return Promise.resolve()
                   }
                   if (value < startPrice) {
                     return Promise.reject(
                       new Error('Giá chốt phải lớn hơn hoặc bằng giá khởi điểm')
-                    );
+                    )
                   }
-                  return Promise.resolve();
+                  return Promise.resolve()
                 },
               }),
             ]}
@@ -115,7 +124,11 @@ const AuctionCreatePage: React.FC = () => {
             <InputNumber min={1} style={{ width: '100%' }} />
           </Form.Item>
           <Form.Item>
-            <Button type='primary' htmlType='submit' className='btn-send-auction-item'>
+            <Button
+              type='primary'
+              htmlType='submit'
+              className='btn-send-auction-item'
+            >
               Gửi vật phẩm
             </Button>
           </Form.Item>

@@ -8,15 +8,15 @@ export interface Auctions {
   auctionItem: AuctionItems
 }
 export interface AuctionItems {
-  id: string;
-  userId: string;
-  name: string;
-  description: string;
-  imageUrl?: string;
-  condition: string;
-  startPrice: number,
-  stepPrice: number,
-  reservePrice: number,
-  status: number,
-  staffNote?: string,
+  id: string
+  userId: string
+  name: string
+  description: string
+  imageUrl?: string
+  condition: string
+  startPrice: number
+  stepPrice: number
+  reservePrice: number
+  status: number
+  staffNote?: string
 }

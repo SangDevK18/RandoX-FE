@@ -1,4 +1,4 @@
-// src/features/voucher/voucherAPI.ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { apiSlice } from '../../apis/apiSlice'
 
 export const voucherAPI = apiSlice.injectEndpoints({

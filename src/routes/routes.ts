@@ -93,8 +93,8 @@ const routes: LayoutRoute[] = [
       {
         path: '/confirm-email',
         component: ConfirmEmail,
-        exact: true
-      }
+        exact: true,
+      },
     ],
   },
   {

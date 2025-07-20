@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Form, Input, Button, DatePicker, notification } from 'antd'
 import { useNavigate } from 'react-router-dom'
 import { useRegisterMutation } from '../../features/auth/authApi'
@@ -16,7 +17,7 @@ export const RegisterForm = () => {
         dob: dayjs(values.dob).format('YYYY-MM-DD'), // 👈 CHUYỂN ĐỊNH DẠNG TẠI ĐÂY
         phoneNumber: values.phoneNumber,
         roleId: 'a1fdb0c2-0daf-4bb0-b075-a3cc0b2febeb',
-        fullname: ""
+        fullname: '',
       }).unwrap()
       console.log(response)
       notification.success({
@@ -94,9 +95,7 @@ export const RegisterForm = () => {
               if (!value || getFieldValue('password') === value) {
                 return Promise.resolve()
               }
-              return Promise.reject(
-                'Mật khẩu nhập lại không khớp!'
-              )
+              return Promise.reject('Mật khẩu nhập lại không khớp!')
             },
           }),
         ]}
@@ -181,7 +180,10 @@ export const RegisterForm = () => {
             >
               Đã có tài khoản?
             </span>
-            <span style={{ fontWeight: 'bold', color: '#000' }}> Đăng nhập</span>
+            <span style={{ fontWeight: 'bold', color: '#000' }}>
+              {' '}
+              Đăng nhập
+            </span>
           </Button>
         </div>
       </Form.Item>

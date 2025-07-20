@@ -1,4 +1,4 @@
-// src/features/promotion/promotionAPI.ts
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { apiSlice } from '../../apis/apiSlice'
 
 export const promotionAPI = apiSlice.injectEndpoints({

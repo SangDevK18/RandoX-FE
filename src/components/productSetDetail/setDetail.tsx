@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react'
 import { Button, Collapse, Spin, message, type CollapseProps } from 'antd'
 import { useParams, useNavigate } from 'react-router-dom'
@@ -341,7 +342,11 @@ const SetDetail: React.FC = () => {
             </div>
           </div>
         </div>
-        <Content title='CÁC SẢN PHẨM' btnContent='Xem thêm' linkURL='/sessions' />
+        <Content
+          title='CÁC SẢN PHẨM'
+          btnContent='Xem thêm'
+          linkURL='/sessions'
+        />
         {isProductListLoading ? (
           <div
             style={{
@@ -351,7 +356,9 @@ const SetDetail: React.FC = () => {
               height: '30vh',
             }}
           >
-            <Spin indicator={<LoadingOutlined style={{ fontSize: 50 }} spin />} />
+            <Spin
+              indicator={<LoadingOutlined style={{ fontSize: 50 }} spin />}
+            />
           </div>
         ) : (
           <ProductsCardSlider products={productList} />

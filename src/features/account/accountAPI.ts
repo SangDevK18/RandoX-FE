@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { apiSlice } from '../../apis/apiSlice'
 
 export const accountAPI = apiSlice.injectEndpoints({
@@ -44,5 +45,5 @@ export const {
   useGetAccountByIdQuery,
   useUpdateAccountMutation,
   useDeleteAccountMutation,
-  useRegisterAccountMutation
+  useRegisterAccountMutation,
 } = accountAPI

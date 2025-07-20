@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { jwtDecode } from 'jwt-decode'
 import Cookies from 'js-cookie'
@@ -30,10 +31,15 @@ const authSlice = createSlice({
       const decodedToken: any = jwtDecode(token)
 
       const userData: UserData = {
-        email: decodedToken['http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'],
-        role: decodedToken['http://schemas.microsoft.com/ws/2008/06/identity/claims/role'],
+        email:
+          decodedToken[
+            'http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name'
+          ],
+        role: decodedToken[
+          'http://schemas.microsoft.com/ws/2008/06/identity/claims/role'
+        ],
         exp: decodedToken.exp,
-        id: ''
+        id: '',
       }
 
       state.userData = userData
@@ -53,8 +59,7 @@ const authSlice = createSlice({
         window.location.href = '/staff/customer-account'
       } else if (userData.role === 'Manager') {
         window.location.href = '/manager/products'
-      }
-      else {
+      } else {
         window.location.href = `/admin/dashboard`
       }
     },

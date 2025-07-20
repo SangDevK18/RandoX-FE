@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Button, Card, Menu, Typography, type MenuProps } from 'antd'
 import { Header } from 'antd/es/layout/layout'
 import { jwtDecode } from 'jwt-decode'
@@ -34,7 +35,8 @@ export default function HeaderCus() {
   let decoded: DecodedToken
   try {
     decoded = jwtDecode<DecodedToken>(token)
-  } catch (err) {
+  } catch (err: any) {
+    console.error('Token không hợp lệ:', err)
     return (
       <Card style={{ maxWidth: 500, margin: '50px auto', textAlign: 'center' }}>
         <Title level={4}>Token không hợp lệ</Title>

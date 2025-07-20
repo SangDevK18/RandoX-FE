@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react'
 import {
   useGetPendingItemsQuery,
@@ -96,14 +97,14 @@ const ManagerApprovalPage: React.FC = () => {
           )}
         />
         <Table.Column
-          title="Actions"
+          title='Actions'
           render={(_, record: any) => (
             <Space>
               <Popconfirm
-                title="Are you sure to approve this task?"
+                title='Are you sure to approve this task?'
                 onConfirm={() => handleApprove(record.id)}
-                okText="Confirm"
-                cancelText="Cancel"
+                okText='Confirm'
+                cancelText='Cancel'
               >
                 <Button>Approve</Button>
               </Popconfirm>
@@ -119,7 +120,6 @@ const ManagerApprovalPage: React.FC = () => {
             </Space>
           )}
         />
-
       </Table>
 
       <Modal

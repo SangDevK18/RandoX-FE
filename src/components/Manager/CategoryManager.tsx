@@ -1,4 +1,4 @@
-// src/components/Manager/CategoryManager.tsx
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react'
 import { Button, Modal, Table, Form, Input, Space, message } from 'antd'
 import {
@@ -31,7 +31,8 @@ const CategoryManager: React.FC = () => {
       setOpen(false)
       form.resetFields()
       setEditing(null)
-    } catch (err) {
+    } catch (err: any) {
+      console.error(err)
       message.error('Error saving category')
     }
   }
@@ -64,7 +65,6 @@ const CategoryManager: React.FC = () => {
         rowKey='id'
         pagination={{ pageSize: 10 }}
         className='container-products'
-
       >
         <Table.Column title='Category Name' dataIndex='categoryName' />
         <Table.Column title='Description' dataIndex='description' />

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { apiSlice } from '../../apis/apiSlice'
 
 export const productSetApi = apiSlice.injectEndpoints({

@@ -37,8 +37,9 @@ const Navbar: React.FC = () => {
     ? JSON.parse(Cookies.get('userData') as string)
     : null
 
-  const { data, isLoading } =
-    useGetWalletBalanceQuery<WalletBalanceResponse>({})
+  const { data, isLoading } = useGetWalletBalanceQuery<WalletBalanceResponse>(
+    {}
+  )
   const balance = data?.data?.balance
 
   const [mobileOpen, setMobileOpen] = useState(false)
@@ -84,10 +85,7 @@ const Navbar: React.FC = () => {
   const TopBarLinks = (
     <Space split={<Divider type='vertical' />}>
       {userData ? (
-        <Link
-          className='top-bar-link'
-          onClick={handleLogout}
-        >
+        <Link className='top-bar-link' onClick={handleLogout}>
           Logout
         </Link>
       ) : (
@@ -126,9 +124,7 @@ const Navbar: React.FC = () => {
           </Space>
 
           {/* Right Side */}
-          <div className='top-bar-links'>
-            {TopBarLinks}
-          </div>
+          <div className='top-bar-links'>{TopBarLinks}</div>
         </Flex>
       </div>
 
@@ -139,11 +135,7 @@ const Navbar: React.FC = () => {
           <Flex align='center' gap='large'>
             <Link href='/' className='logo-link'>
               <div className='logo-placeholder'>
-                <img
-                  src='/Logo.png'
-                  alt='Logo'
-                  className='logo-image'
-                />
+                <img src='/Logo.png' alt='Logo' className='logo-image' />
               </div>
             </Link>
 
@@ -226,11 +218,14 @@ const Navbar: React.FC = () => {
                     height: '100vh',
                   }}
                 >
-                  <Spin indicator={<LoadingOutlined style={{ fontSize: 48 }} spin />} />
-                </div>) : (
-                <Text strong>
-                  {balance?.toLocaleString()}₫
-                </Text>
+                  <Spin
+                    indicator={
+                      <LoadingOutlined style={{ fontSize: 48 }} spin />
+                    }
+                  />
+                </div>
+              ) : (
+                <Text strong>{balance?.toLocaleString()}₫</Text>
               )}
             </Flex>
           )}

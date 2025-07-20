@@ -2,18 +2,16 @@
 import { apiSlice } from '../../apis/apiSlice'
 
 export const walletAPI = apiSlice.injectEndpoints({
-    endpoints: (builder) => ({
-        getWalletBalance: builder.query({
-            query: () => ({
-                url: '/Wallet/wallet',
-                method: 'GET',
-            }),
-            transformResponse: (res) => res,
-            providesTags: ['wallets'],
-        }),
+  endpoints: (builder) => ({
+    getWalletBalance: builder.query({
+      query: () => ({
+        url: '/Wallet/wallet',
+        method: 'GET',
+      }),
+      transformResponse: (res) => res,
+      providesTags: ['wallets'],
     }),
+  }),
 })
 
-export const {
-useGetWalletBalanceQuery
-} = walletAPI
+export const { useGetWalletBalanceQuery } = walletAPI

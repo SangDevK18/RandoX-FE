@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 // src/components/Manager/PromotionVoucherManager.tsx
 import React, { useState } from 'react'
 import {
@@ -124,7 +126,6 @@ const PromotionVoucherManager: React.FC = () => {
             rowKey='id'
             style={{ marginTop: 16 }}
             className='container-products'
-
           >
             <Table.Column title='Event' dataIndex='event' />
             <Table.Column title='Start Date' dataIndex='startDate' />

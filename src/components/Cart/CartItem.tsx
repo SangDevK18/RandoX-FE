@@ -1,4 +1,4 @@
-// src/components/CartItem/CartItem.tsx (hoặc vị trí bạn muốn)
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react'
 import { useGetProductDetailQuery } from '../../features/product/productAPI'
 

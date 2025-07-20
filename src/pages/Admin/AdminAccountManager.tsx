@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useState } from 'react'
 import {
   Table,
@@ -22,15 +23,12 @@ import type { ColumnsType } from 'antd/es/table'
 
 const { Option } = Select
 
-
 const ROLE_OPTIONS = [
   { label: 'Admin', value: 'c6af9eea-c011-4b98-9963-009a859d060b' },
   { label: 'Manager', value: '532fcf02-916f-4f2d-a095-60ed4da8924e' },
   { label: 'Customer', value: 'a1fdb0c2-0daf-4bb0-b075-a3cc0b2febeb' },
   { label: 'Staff', value: '59e7061e-5b9c-4dfa-93d2-baea9717f37a' },
 ]
-
-
 
 const AdminAccountManager: React.FC = () => {
   const { data: accounts = [], refetch } = useGetAllAccountsQuery()
@@ -63,7 +61,8 @@ const AdminAccountManager: React.FC = () => {
       message.success('Account updated successfully')
       setIsModalVisible(false)
       refetch()
-    } catch (error) {
+    } catch (error: any) {
+      console.error('Update error:', error)
       message.error('Failed to update account')
     }
   }
