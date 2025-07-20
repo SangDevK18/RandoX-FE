@@ -6,7 +6,7 @@ import moment from 'moment'
 import { useNavigate } from 'react-router-dom'
 
 interface AuctionCardSliderProps {
-  auctions: Auctions[] | any // fallback type any để tránh lỗi TS lúc chưa rõ
+  auctions: Auctions[] | any // fallback type any để tránh lỗi TS lúc chưa rõ as
 }
 
 const AuctionSlider: React.FC<AuctionCardSliderProps> = ({ auctions }) => {
